@@ -122,18 +122,25 @@ nav.top ul a:hover{color:var(--paper)}
 .price small{font-family:var(--f-mono);font-size:.75rem;color:var(--glow);letter-spacing:.08em;margin-left:8px;vertical-align:middle}
 .plan ul{margin:0;padding-left:18px;color:var(--muted);font-size:.93rem;display:grid;gap:6px}
 
-/* economics */
-.concepts{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-@media (max-width:820px){.concepts{grid-template-columns:1fr}}
-.concept{border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:14px;background:var(--ink-2)}
-.concept .unit{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);letter-spacing:.08em}
-.concept p{color:var(--muted);font-size:.95rem}
-.fit{display:grid;gap:8px;font-size:.92rem}
-.fit div{display:grid;grid-template-columns:96px 1fr;gap:10px}
-.fit b{font-family:var(--f-mono);font-weight:500;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
-.fit .yes b{color:var(--sage)}
-.fit .no b{color:var(--glow)}
-.fit span{color:var(--paper)}
+/* proof */
+.slot{color:var(--glow)}
+.proof{display:grid;border-top:1px solid var(--line)}
+.claim{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;padding-block:32px;border-bottom:1px solid var(--line)}
+.claim .stat{display:grid;gap:8px;align-content:start}
+.claim .num{font-family:var(--f-display);font-size:clamp(3rem,7vw,4.6rem);line-height:.95}
+.claim .lbl{color:var(--muted);font-size:.95rem;max-width:32ch}
+.claim .why{display:grid;gap:10px;align-content:start}
+.claim .why p{color:var(--muted);max-width:60ch}
+@media (max-width:760px){.claim{grid-template-columns:1fr;gap:16px}}
+.money{margin-top:48px;background:var(--ink-2);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;gap:22px}
+.money-head{display:grid;gap:6px}
+.money-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.money-grid>div{display:grid;gap:4px;align-content:start}
+.money-grid .lbl{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.money-grid .num{font-family:var(--f-display);font-size:2.2rem;line-height:1.1}
+.money-grid p{color:var(--muted);font-size:.88rem}
+.money .note{margin:0}
+@media (max-width:820px){.money-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* survey + table */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
@@ -178,7 +185,7 @@ footer .wrap{padding-block:32px;display:flex;justify-content:space-between;gap:1
       <li><a href="#pad">Focus Pad</a></li>
       <li><a href="#app">App</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#economics">Economics</a></li>
+      <li><a href="#proof">The Proof</a></li>
       <li><a href="#survey">Survey</a></li>
       <li><a href="#team">Team</a></li>
     </ul>
@@ -329,7 +336,7 @@ footer .wrap{padding-block:32px;display:flex;justify-content:space-between;gap:1
     <div class="sec-head">
       <span class="eyebrow">Pricing</span>
       <h2>Prices coming soon.</h2>
-      <p class="lede">We are still setting prices using our survey results. See the Economics section for how we're working it out.</p>
+      <p class="lede">We're setting final prices from our survey results. See The Proof for what students said they'd pay.</p>
     </div>
     <div class="plans">
       <div class="plan">
@@ -351,54 +358,91 @@ footer .wrap{padding-block:32px;display:flex;justify-content:space-between;gap:1
   </div>
 </section>
 
-<section id="economics">
+<section id="proof">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Microeconomics</span>
-      <h2>The economics behind Oasis.</h2>
-      <p class="lede">How the ideas from class apply to our product, and where they don't. Swap in your survey numbers where you see <span style="color:var(--glow);font-family:var(--f-mono);font-size:.9em">[fill in]</span>.</p>
+      <span class="eyebrow">The proof</span>
+      <h2>Why Oasis works, backed by our survey.</h2>
+      <p class="lede">We surveyed <span class="slot">[n]</span> students before building anything. Here's what they told us and how it shapes the product, the price and the plan.</p>
     </div>
-    <div class="concepts">
-      <article class="concept">
-        <span class="unit">Unit 2 · Demand &amp; supply</span><h3>Demand</h3>
-        <p>Students already buy reusable water bottles, so there is demand for the category. Oasis adds tracking and focus tools, which should move our demand curve to the right compared with a plain bottle.</p>
-        <div class="fit"><div class="yes"><b>Applies</b><span>Willingness to pay from our survey gives us points on a demand curve: <span style="color:var(--glow)">[fill in]</span>.</span></div><div class="no"><b>Doesn't</b><span>Some buyers choose by colour or brand image, not price, which a simple demand curve doesn't capture.</span></div></div>
+
+    <div class="proof">
+      <article class="claim">
+        <div class="stat"><span class="num slot">[—]%</span><span class="lbl">of students say they don't drink enough water during the school day</span></div>
+        <div class="why">
+          <span class="eyebrow">The problem is real</span>
+          <h3>Students know they're under-hydrated</h3>
+          <p>Most students don't need convincing that they should drink more. They need a way to see it. Oasis tracks every sip automatically, so there's nothing to remember or log.</p>
+        </div>
       </article>
-      <article class="concept">
-        <span class="unit">Unit 2 · Elasticity</span><h3>Price elasticity of demand</h3>
-        <p>Water bottles have many cheap substitutes, so demand for a basic bottle is elastic. Smart features make Oasis harder to replace, which should make demand for it less elastic.</p>
-        <div class="fit"><div class="yes"><b>Applies</b><span>Survey: how many people still buy if the price rises from $A to $B? <span style="color:var(--glow)">[fill in]</span>.</span></div><div class="no"><b>Doesn't</b><span>The app subscription is a small monthly cost, so buyers may not react to it the way they react to the up-front price.</span></div></div>
+
+      <article class="claim">
+        <div class="stat"><span class="num slot">[—]%</span><span class="lbl">say their phone distracts them while studying at least once per session</span></div>
+        <div class="why">
+          <span class="eyebrow">The second problem</span>
+          <h3>Phones break focus</h3>
+          <p>The Focus Pad turns "put your phone away" into something physical: set it down and your chosen apps lock. Pairing it with the bottle means one purchase solves both problems at the desk.</p>
+        </div>
       </article>
-      <article class="concept">
-        <span class="unit">Unit 2 · Consumer surplus</span><h3>Consumer surplus</h3>
-        <p>Consumer surplus is the gap between what a buyer would pay and what they actually pay. We can measure it from survey answers to "What is the most you'd pay?"</p>
-        <div class="fit"><div class="yes"><b>Applies</b><span>Average willingness to pay minus our price = surplus per buyer: <span style="color:var(--glow)">[fill in]</span>.</span></div><div class="no"><b>Doesn't</b><span>People tend to overstate what they'd pay in a survey compared with spending real money.</span></div></div>
+
+      <article class="claim">
+        <div class="stat"><span class="num slot">$[—]</span><span class="lbl">average amount students said they'd pay for the bottle</span></div>
+        <div class="why">
+          <span class="eyebrow">Students will pay</span>
+          <h3>Our price leaves buyers feeling they got a deal</h3>
+          <p>We plan to price below what students said they'd pay, so most buyers get more value than they spend. That gap is what turns first buyers into people who recommend us.</p>
+        </div>
       </article>
-      <article class="concept">
-        <span class="unit">Unit 2 · Cross-price elasticity</span><h3>Substitutes &amp; complements</h3>
-        <p>Hydro Flask-style bottles and app blockers are substitutes, so if they get cheaper, Oasis demand falls. The bottle, the pad and the subscription are complements, so buying one raises demand for the others.</p>
-        <div class="fit"><div class="yes"><b>Applies</b><span>Survey: would you switch to Oasis if competitors cost more? <span style="color:var(--glow)">[fill in]</span>.</span></div><div class="no"><b>Doesn't</b><span>Free phone settings like Screen Time can substitute for the pad at zero cost, which caps how much the pad can charge.</span></div></div>
+
+      <article class="claim">
+        <div class="stat"><span class="num slot">[—]%</span><span class="lbl">would still buy if the price went up by $10</span></div>
+        <div class="why">
+          <span class="eyebrow">Pricing power</span>
+          <h3>Smart features make Oasis hard to replace</h3>
+          <p>A plain bottle loses buyers the moment a cheaper one shows up. Because Oasis does things other bottles don't, a small price change doesn't scare off most of our customers.</p>
+        </div>
       </article>
-      <article class="concept">
-        <span class="unit">Unit 2 · Equilibrium</span><h3>Equilibrium &amp; disequilibrium</h3>
-        <p>If we price above equilibrium, unsold inventory piles up (surplus). If we price below it at launch, we sell out (shortage), especially for popular colours.</p>
-        <div class="fit"><div class="yes"><b>Applies</b><span>We can limit colour runs early to avoid a surplus of less popular finishes.</span></div><div class="no"><b>Doesn't</b><span>A startup sets its own price instead of letting a market settle on one, so it can stay out of equilibrium for a while.</span></div></div>
+
+      <article class="claim">
+        <div class="stat"><span class="num slot">[—]%</span><span class="lbl">would pick Oasis over a regular insulated bottle at a similar price</span></div>
+        <div class="why">
+          <span class="eyebrow">Beating the competition</span>
+          <h3>We win on features, not just looks</h3>
+          <p>Insulated bottles are everywhere, and free tools like Screen Time can limit phone use. No one else puts tracking, a charging dock and phone blocking in one system, and that's what we compete on.</p>
+        </div>
       </article>
-      <article class="concept">
-        <span class="unit">Unit 3 · Costs &amp; production</span><h3>Costs &amp; production</h3>
-        <p>Fixed costs include the bottle mold, sensor design and app development. Variable costs include materials, the sensor, the battery and shipping for each unit. Average cost falls as we produce more (economies of scale).</p>
-        <div class="fit"><div class="yes"><b>Applies</b><span>Estimated fixed costs <span style="color:var(--glow)">[fill in]</span>; variable cost per bottle <span style="color:var(--glow)">[fill in]</span>.</span></div><div class="no"><b>Doesn't</b><span>The app has almost zero marginal cost per extra user, unlike the hardware.</span></div></div>
+
+      <article class="claim">
+        <div class="stat"><span class="num slot">[—]%</span><span class="lbl">would pay for the app subscription · average $[—]/month</span></div>
+        <div class="why">
+          <span class="eyebrow">Recurring revenue</span>
+          <h3>The app keeps paying after the sale</h3>
+          <p>The bottle and pad earn money once. The subscription earns every month and costs almost nothing extra per user, so each subscriber adds nearly pure profit once the app is built.</p>
+        </div>
       </article>
-      <article class="concept">
-        <span class="unit">Unit 3 · Profit</span><h3>Profit</h3>
-        <p>Hardware makes money once per sale. The subscription brings in revenue every month, which helps cover fixed costs over time.</p>
-        <div class="fit"><div class="yes"><b>Applies</b><span>Break-even units = fixed costs ÷ (price − variable cost): <span style="color:var(--glow)">[fill in]</span>.</span></div><div class="no"><b>Doesn't</b><span>Many startups run at a loss on purpose early to win customers, which goes against short-run profit maximisation.</span></div></div>
+
+      <article class="claim">
+        <div class="stat"><span class="num slot">[colour]</span><span class="lbl">was the most popular finish, chosen by [—]% of students</span></div>
+        <div class="why">
+          <span class="eyebrow">Smart production</span>
+          <h3>Make more of what sells</h3>
+          <p>We'll make more of the most popular colours at launch and run smaller batches of the rest, so we don't sell out of favourites or get stuck with boxes of colours nobody wants.</p>
+        </div>
       </article>
-      <article class="concept">
-        <span class="unit">Unit 3 · Competition</span><h3>Market structure</h3>
-        <p>Water bottles are close to monopolistic competition: lots of sellers with slightly different products. Oasis competes by being the only bottle and focus tool sold as one system.</p>
-        <div class="fit"><div class="yes"><b>Applies</b><span>Product differentiation (tracking, colours, the pad) gives us some control over price.</span></div><div class="no"><b>Doesn't</b><span>Big brands could copy the features fast, so our edge may only last a short time.</span></div></div>
-      </article>
+    </div>
+
+    <div class="money">
+      <div class="money-head">
+        <span class="eyebrow">The numbers</span>
+        <h3>From first unit to profit</h3>
+      </div>
+      <div class="money-grid">
+        <div><span class="lbl">Startup costs</span><span class="num slot">$[—]</span><p>Bottle mold, sensor design, app build</p></div>
+        <div><span class="lbl">Cost per bottle</span><span class="num slot">$[—]</span><p>Materials, sensor, battery, shipping</p></div>
+        <div><span class="lbl">Selling price</span><span class="num slot">$[—]</span><p>Set from survey results above</p></div>
+        <div><span class="lbl">Break-even</span><span class="num slot">[—] units</span><p>Startup costs ÷ profit per bottle</p></div>
+      </div>
+      <p class="note">Making more bottles spreads startup costs across more units, so each bottle gets cheaper to make as we grow.</p>
     </div>
   </div>
 </section>
@@ -412,15 +456,15 @@ footer .wrap{padding-block:32px;display:flex;justify-content:space-between;gap:1
     </div>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>Question</th><th>Concept</th><th>Result</th></tr></thead>
+        <thead><tr><th>Question</th><th>What it tells us</th><th>Result</th></tr></thead>
         <tbody>
-          <tr><td>Do you think you drink enough water during the school day?</td><td>Demand</td><td class="fill">[fill in]</td></tr>
-          <tr><td>How often does your phone distract you while studying?</td><td>Demand</td><td class="fill">[fill in]</td></tr>
-          <tr><td>What is the most you would pay for the Oasis bottle?</td><td>Consumer surplus</td><td class="fill">[fill in]</td></tr>
-          <tr><td>Would you still buy it if the price went up by $10?</td><td>Price elasticity</td><td class="fill">[fill in]</td></tr>
-          <tr><td>If a Hydro Flask got cheaper, would you buy that instead?</td><td>Cross-price elasticity</td><td class="fill">[fill in]</td></tr>
-          <tr><td>Would you pay a monthly subscription for the app? How much?</td><td>Pricing / profit</td><td class="fill">[fill in]</td></tr>
-          <tr><td>Which bottle colour would you pick?</td><td>Production planning</td><td class="fill">[fill in]</td></tr>
+          <tr><td>Do you think you drink enough water during the school day?</td><td>Is the problem real?</td><td class="fill">[fill in]</td></tr>
+          <tr><td>How often does your phone distract you while studying?</td><td>Need for the Focus Pad</td><td class="fill">[fill in]</td></tr>
+          <tr><td>What is the most you would pay for the Oasis bottle?</td><td>Price ceiling</td><td class="fill">[fill in]</td></tr>
+          <tr><td>Would you still buy it if the price went up by $10?</td><td>Pricing power</td><td class="fill">[fill in]</td></tr>
+          <tr><td>If a Hydro Flask got cheaper, would you buy that instead?</td><td>Competitive edge</td><td class="fill">[fill in]</td></tr>
+          <tr><td>Would you pay a monthly subscription for the app? How much?</td><td>Recurring revenue</td><td class="fill">[fill in]</td></tr>
+          <tr><td>Which bottle colour would you pick?</td><td>Launch inventory</td><td class="fill">[fill in]</td></tr>
         </tbody>
       </table>
     </div>
